@@ -1,3 +1,5 @@
+import 'source-map-support/register';
+
 import * as express from 'express';
 import { Png } from './img';
 import { Vector } from './vector';
