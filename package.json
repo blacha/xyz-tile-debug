@@ -1,0 +1,38 @@
+{
+  "name": "xyz-tile-debug",
+  "version": "0.0.1",
+  "main": "build/src/index.js",
+  "scripts": {
+    "start": "node build/src/index.js",
+    "build": "tsc --pretty",
+    "build-watch": "tsc --pretty --watch",
+    "lint": "eslint '{src,test}/**/*.{js,ts,tsx}' --quiet --fix",
+    "test": "ospec build/**/*.spec.js",
+    "webpack": "NODE_ENV=production webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@types/express": "^4.17.0",
+    "@types/node": "^12.0.7",
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^2.4.1",
+    "ospec": "^3.1.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.5.1"
+  },
+  "dependencies": {
+    "@mapbox/sphericalmercator": "^1.1.0",
+    "canvas": "^2.5.0",
+    "express": "^4.17.1",
+    "source-map-support": "^0.5.12"
+  }
+}
