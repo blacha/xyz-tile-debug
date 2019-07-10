@@ -1,6 +1,6 @@
 # Debug XYZ tile server
 
-Generates debug tiles to overlay in a system that consumes XYZ tiles
+Generates debug tiles to overlay in systems that consume XYZ tiles
 
 
 ![Example Tile](./static/example.tile.png)
@@ -38,7 +38,7 @@ yarn run test
 yarn run start
 ```
 
-The server will start on a random port above 30000, this can be configured using a `PORT` environment vairable
+The server will start on a random port `8855`, this can be configured using the `PORT` environment vairable
 
 ```shell
 PORT=1234 yarn run start

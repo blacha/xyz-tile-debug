@@ -4,9 +4,9 @@ import * as express from 'express';
 import { Png } from './img';
 import { Vector } from './vector';
 import { Logger } from './log';
-import { performance } from 'perf_hooks'
+import { performance } from 'perf_hooks';
 
-const PORT = process.env.PORT || Math.floor(Math.random() * 4096) + 30000;
+const PORT = process.env.PORT || 8855;
 const app = express();
 
 function getXyz(req: express.Request): Vector {
@@ -26,7 +26,7 @@ app.get('/:x/:y/:z.png', async (req: express.Request, res: express.Response, nex
     const v = getXyz(req);
     const png = await Png.toXyz(v);
     const duration = performance.now() - startTime;
-    Logger.info({ duration }, req.url)
+    Logger.info({ duration }, req.url);
     res.header('content-type', 'image/png');
     res.send(png);
     next();
