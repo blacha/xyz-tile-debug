@@ -15,7 +15,10 @@ RUN apk add  --update --no-cache \
     libpng-dev \
     pango-dev \
     giflib-dev \
-    gd-dev
+    gd-dev \
+    ttf-opensans ttf-dejavu ttf-droid \
+    ttf-freefont ttf-liberation ttf-ubuntu-font-family \
+    fontconfig
 
 # Create app directory
 WORKDIR /usr/src/app
