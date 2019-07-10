@@ -3,6 +3,8 @@ import 'source-map-support/register';
 import * as express from 'express';
 import { Png } from './img';
 import { Vector } from './vector';
+import { Logger } from './log';
+import { performance } from 'perf_hooks'
 
 const PORT = process.env.PORT || Math.floor(Math.random() * 4096) + 30000;
 const app = express();
@@ -20,10 +22,11 @@ function getXyz(req: express.Request): Vector {
 }
 
 app.get('/:x/:y/:z.png', async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    const startTime = performance.now();
     const v = getXyz(req);
-    console.time(`png:${v.x}:${v.y}:${v.z}`);
     const png = await Png.toXyz(v);
-    console.timeEnd(`png:${v.x}:${v.y}:${v.z}`);
+    const duration = performance.now() - startTime;
+    Logger.info({ duration }, req.url)
     res.header('content-type', 'image/png');
     res.send(png);
     next();

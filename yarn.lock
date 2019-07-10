@@ -148,11 +148,6 @@
   dependencies:
     find-up "^2.1.0"
 
-"@mapbox/sphericalmercator@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@mapbox/sphericalmercator/-/sphericalmercator-1.1.0.tgz#f3b1af042620716a1289fc41e1e97f610823aefe"
-  integrity sha512-pEsfZyG4OMThlfFQbCte4gegvHUjxXCjz0KZ4Xk8NdOYTQBLflj6U8PL05RPAiuRAMAQNUUKJuL6qYZ5Y4kAWA==
-
 "@marionebl/sander@^0.6.0":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@marionebl/sander/-/sander-0.6.1.tgz#1958965874f24bc51be48875feb50d642fc41f7b"
@@ -398,6 +393,11 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
+
+bblog@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/bblog/-/bblog-2.0.0.tgz#2930a95ad85d97c0493e1f0aa825f4297dbe795d"
+  integrity sha1-KTCpWthdl8BJPh8KqCX0KX2+eV0=
 
 body-parser@1.19.0:
   version "1.19.0"
