@@ -31,4 +31,7 @@ ADD test ./test
 RUN yarn
 RUN yarn build
 
+ADD static/mplus-1m-regular.ttf /usr/share/fonts/
+RUN fc-cache -f
+
 CMD ["yarn", "start"]
