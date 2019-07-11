@@ -14,6 +14,14 @@ QuadKey
 X, Y, Zoom
 ```
 
+# Usage
+
+```
+docker run -p 8855:8855 registry.gitlab.com/blacha/xyz-tile-debug:latest
+
+open http://localhost:8855/10/10/10.png
+```
+
 
 # Building
 This requires [NodeJs](https://nodejs.org/en/) > 12 & [Yarn](https://yarnpkg.com/en/)
