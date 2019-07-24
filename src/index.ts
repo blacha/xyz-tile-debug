@@ -26,11 +26,13 @@ app.get('/:x/:y/:z.png', async (req: express.Request, res: express.Response, nex
     const v = getXyz(req);
     const png = await Png.toXyz(v);
     const duration = performance.now() - startTime;
+
+    res.header('content-type', 'image/png');
+    res.send(png);
+
     const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     const userAgent = req.headers['user-agent'];
     Logger.info({ userAgent, ip, duration }, req.url);
-    res.header('content-type', 'image/png');
-    res.send(png);
     next();
 });
 
