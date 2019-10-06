@@ -1,6 +1,6 @@
 {
   "name": "xyz-tile-debug",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "main": "build/src/index.js",
   "scripts": {
     "start": "node build/src/index.js",
