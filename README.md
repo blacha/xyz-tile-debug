@@ -2,16 +2,16 @@
 
 Generates debug tiles to overlay in systems that consume XYZ tiles
 
-
 ![Example Tile](./static/example.tile.png)
 
-
 ## Format
+
 Images are output with a red border, QuadKey and XYZ tile information
 
 ```
+X, Y
 QuadKey
-X, Y, Zoom
+Zoom
 ```
 
 # Usage
@@ -22,8 +22,8 @@ docker run -p 8855:8855 registry.gitlab.com/blacha/xyz-tile-debug:latest
 open http://localhost:8855/10/10/10.png
 ```
 
-
 # Building
+
 This requires [NodeJs](https://nodejs.org/en/) > 12 & [Yarn](https://yarnpkg.com/en/)
 
 Use [n](https://github.com/tj/n) to manage nodeJs versions
