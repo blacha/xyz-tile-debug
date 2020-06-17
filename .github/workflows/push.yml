@@ -26,6 +26,9 @@ jobs:
       - name: Test
         run: yarn run test
 
+      - name: Build docker
+        run: docker build . -t xyz-tile-debug:latest
+
       - name: Publish NPM
         if: startsWith(github.ref, 'refs/tags/v')
         run: yarn publish
