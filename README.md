@@ -17,8 +17,9 @@ Zoom
 # Usage
 
 ```
-yarn start
+npm i -g xyz-tile-debug
 
+xyz-tile-debug
 open http://localhost:8855/v1/tiles/WebMercatorQuad/10/10/10.png
 open http://localhost:8855/v1/wmts/WMTSCapabilities.xml
 ```
