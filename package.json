@@ -1,7 +1,10 @@
 {
   "name": "xyz-tile-debug",
   "version": "0.1.0",
-  "main": "build/src/index.js",
+  "main": "build/index.js",
+  "bin": {
+    "xyz-tile-debug": "./xyz-tile-debug"
+  },
   "scripts": {
     "start": "node build/index.js",
     "build": "tsc --pretty",
