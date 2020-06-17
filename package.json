@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "main": "build/src/index.js",
   "scripts": {
-    "start": "node build/src/index.js",
+    "start": "node build/index.js",
     "build": "tsc --pretty",
     "build-watch": "tsc --pretty --watch",
-    "lint": "eslint '{src,test}/**/*.{js,ts,tsx}' --quiet --fix",
-    "test": "ospec build/**/*.spec.js",
+    "lint": "eslint 'src/**/*.ts' --quiet --fix",
+    "test": "ospec build/**/*.test.js",
     "webpack": "NODE_ENV=production webpack"
   },
   "keywords": [],
@@ -15,24 +15,24 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-conventional": "^8.0.0",
     "@types/express": "^4.17.0",
     "@types/node": "^13.1.0",
+    "@types/geojson": "^7946.0.7",
     "@typescript-eslint/eslint-plugin": "^1.10.2",
     "@typescript-eslint/parser": "^1.10.2",
-    "eslint": "^5.16.0",
+    "eslint": "^7.1.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^4.2.5",
-    "ospec": "^4.0.0",
-    "prettier": "^2.0.4",
+    "ospec": "^4.1.1",
+    "prettier": "^2.0.5",
     "typescript": "^3.5.1"
   },
   "dependencies": {
+    "@basemaps/geo": "^2.2.0",
     "bblog": "^2.0.0",
-    "canvas": "^2.5.0",
+    "canvas": "^2.6.1",
     "express": "^4.17.1",
-    "source-map-support": "^0.5.12"
+    "pretty-json-log": "^0.3.1",
+    "source-map-support": "^0.5.19"
   }
 }

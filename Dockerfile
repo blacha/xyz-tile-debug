@@ -26,7 +26,6 @@ WORKDIR /usr/src/app
 COPY *.json ./
 COPY yarn.lock ./
 ADD src ./src
-ADD test ./test
 
 RUN yarn
 RUN yarn build
