@@ -1,3 +1,18 @@
+# [1.0.0](https://gitlab.com/blacha/xyz-tile-debug/compare/v0.1.0...v1.0.0) (2020-06-17)
+
+
+### Bug Fixes
+
+* **docker:** correct missing build folder ([d8e7120](https://gitlab.com/blacha/xyz-tile-debug/commit/d8e712080e5b3679302c9b7125259850492c50fc))
+
+
+### Features
+
+* **cli:** add cli to start "xyz-tile-debug" ([7be1c20](https://gitlab.com/blacha/xyz-tile-debug/commit/7be1c20b9b96b50cbef0f209b7923e6553cebc8f))
+* support serving wmts ([#156](https://gitlab.com/blacha/xyz-tile-debug/issues/156)) ([6cf7e01](https://gitlab.com/blacha/xyz-tile-debug/commit/6cf7e015bca26877cee89f61d237c8c2059acaf6))
+
+
+
 # [0.1.0](https://gitlab.com/blacha/xyz-tile-debug/compare/v0.0.6...v0.1.0) (2019-10-06)
 
 
