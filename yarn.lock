@@ -18,10 +18,10 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@basemaps/geo@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@basemaps/geo/-/geo-2.2.0.tgz#46e384ac4cebe2c21948798e55c397b350db615c"
-  integrity sha512-l8WQ+Y43ilvg+y8AoH5aFMKYuB4qtbuNp02wopMctNlXjqnmCu6TBTUeRze9/m6T9wdSFLXr7uN5G8K+WEtpNQ==
+"@basemaps/geo@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@basemaps/geo/-/geo-3.0.0.tgz#5306e4a1bc3b24987cec100555093f288f19ac94"
+  integrity sha512-tAYIfWhlfcyMvbeKQEeEcNWJ30rykfcq8hdEQHGshUjiOQn1vqGUQzqx/gv1qxTt0I9lWPP3AxjkKgLXyWgCIw==
 
 "@types/body-parser@*":
   version "1.17.1"
