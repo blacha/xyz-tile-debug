@@ -31,7 +31,7 @@
     "typescript": "^3.5.1"
   },
   "dependencies": {
-    "@basemaps/geo": "^2.2.0",
+    "@basemaps/geo": "^3.1.0",
     "bblog": "^2.0.0",
     "canvas": "^2.6.1",
     "express": "^4.17.1",
