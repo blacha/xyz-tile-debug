@@ -47,7 +47,7 @@ function asyncRequest(fn: (req: Req, res: express.Response) => Promise<void>) {
             res.end();
         }
 
-        logCtx.duration = Math.floor((performance.now() - startTime) / 1000) * 1000;
+        logCtx.duration = Math.floor((performance.now() - startTime) * 100) / 100;
         logCtx.status = res.statusCode;
 
         if (res.statusCode > 399) {
