@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/blacha/xyz-tile-debug/compare/v1.1.0...v1.1.1) (2020-07-11)
+
+
+### Bug Fixes
+
+* correct license references ([29ec4f5](https://github.com/blacha/xyz-tile-debug/commit/29ec4f5671fce3a9174c5ee4cc6e0bdb31557112))
+
+
+
 # [1.1.0](https://github.com/blacha/xyz-tile-debug/compare/v0.1.0...v1.1.0) (2020-07-11)
 
 
