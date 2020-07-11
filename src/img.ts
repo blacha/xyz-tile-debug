@@ -1,5 +1,5 @@
 import { Vector } from './vector';
-import { QuadKey } from '@basemaps/geo';
+import { QuadKey, EpsgCode } from '@basemaps/geo';
 import { TileMatrixSet } from '@basemaps/geo/build/tile.matrix.set';
 import * as NodeCanvas from 'canvas';
 
@@ -7,10 +7,7 @@ const CANVAS_SIZE = 256;
 const FONT_SIZE = CANVAS_SIZE / 6;
 
 async function xyzPng(v: Vector, tms?: TileMatrixSet) {
-    let qk = '';
-    try {
-        qk = tms?.quadKey.fromTile(v) ?? QuadKey.fromTile(v);
-    } catch (e) {}
+    let qk = tms == null || tms?.projection.code == EpsgCode.Google ? QuadKey.fromTile(v) : '';
 
     // Quad keys get too long for tiles so shorten them
     if (qk.length > 10) {
