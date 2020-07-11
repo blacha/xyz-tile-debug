@@ -1,3 +1,21 @@
+# [1.1.0](https://github.com/blacha/xyz-tile-debug/compare/v0.1.0...v1.1.0) (2020-07-11)
+
+
+### Bug Fixes
+
+* timing stats should be rounding to 2dp ([b38bcdf](https://github.com/blacha/xyz-tile-debug/commit/b38bcdfea0531503532b84d2f7006623548c7c86))
+* **docker:** correct missing build folder ([d8e7120](https://github.com/blacha/xyz-tile-debug/commit/d8e712080e5b3679302c9b7125259850492c50fc))
+
+
+### Features
+
+* color code images based on tile matrix set ([c8a89b2](https://github.com/blacha/xyz-tile-debug/commit/c8a89b2253a9d3826c06dbe7d3ab3c4a9d438aa7))
+* only show quadkey info if its a quad ([19cc717](https://github.com/blacha/xyz-tile-debug/commit/19cc717dbb26920396b2e87f8563c768e73fbdbf))
+* **cli:** add cli to start "xyz-tile-debug" ([7be1c20](https://github.com/blacha/xyz-tile-debug/commit/7be1c20b9b96b50cbef0f209b7923e6553cebc8f))
+* support serving wmts ([#156](https://github.com/blacha/xyz-tile-debug/issues/156)) ([6cf7e01](https://github.com/blacha/xyz-tile-debug/commit/6cf7e015bca26877cee89f61d237c8c2059acaf6))
+
+
+
 # [1.0.0](https://github.com/blacha/xyz-tile-debug/compare/v0.1.0...v1.0.0) (2020-07-11)
 
 
