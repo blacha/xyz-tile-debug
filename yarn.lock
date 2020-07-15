@@ -19,9 +19,9 @@
     js-tokens "^4.0.0"
 
 "@basemaps/geo@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@basemaps/geo/-/geo-4.0.0.tgz#1310f2634c5f0abdaf7c82c9f9e9c83317a9e75c"
-  integrity sha512-aRzsaizC8SOgqsc8VyFtb6w4qKmYrMl2HIwxW0a/hKECO/oHCZup2OZaexnNGK3lc7mtORexDiTcFnSBqcodxQ==
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@basemaps/geo/-/geo-4.1.0.tgz#a18828b1da7039703672fea7f2201831c2c17a5b"
+  integrity sha512-U3Dd0FUJikajUQyXgNpRbMZdoeFWudY48FsVQCt3s9ZXeE1wItncs6s7YWECz9NL2mOkgPyXZymoW1f/5wO0Ew==
 
 "@types/body-parser@*":
   version "1.17.1"
