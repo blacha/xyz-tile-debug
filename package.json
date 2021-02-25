@@ -1,12 +1,12 @@
 {
   "name": "xyz-tile-debug",
   "version": "1.1.1",
-  "main": "build/index.js",
+  "main": "build/src/index.js",
   "bin": {
     "xyz-tile-debug": "./xyz-tile-debug"
   },
   "scripts": {
-    "start": "node build/index.js",
+    "start": "node build/src/index.js",
     "build": "tsc --pretty",
     "build-watch": "tsc --pretty --watch",
     "lint": "eslint 'src/**/*.ts' --quiet --fix",
