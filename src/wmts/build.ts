@@ -41,26 +41,32 @@ function tmsToXml(tms: TileMatrixSet): VNode {
   ]);
 }
 
-export function buildWmts(tms: TileMatrixSet[], baseUrl: string): string {
+export function buildWmts(tileMatrixSets: TileMatrixSet[], baseUrl: string): string {
+  const layers = [];
+  for (const tileMatrix of tileMatrixSets) {
+    layers.push(
+      V('Layer', [
+      V('ows:Title', 'Debug Tiles'),
+      V('ows:Abstract', ''),
+      V('ows:Identifier', tileMatrix.def.identifier + '-Debug'),
+      tmsToBoundingBox(tileMatrix),
+      V('Style', [V('ows:Identifier', 'default')]),
+      V('Format', 'image/png'),
+      V('TileMatrixSetLink', [V('TileMatrixSet', tileMatrix.def.identifier)]),
+      V('ResourceURL', {
+        format: 'image/png',
+        resourceType: 'tile',
+        template: `${baseUrl}/v1/tiles/{TileMatrixSet}/{TileMatrix}/{TileCol}/{TileRow}.png`,
+      }),
+    ]))
+  }
+
   return (
     XmlPrefix +
     V('Capabilities', CapabilitiesAttrs, [
       V('Contents', [
-        V('Layer', [
-          V('ows:Title', 'Debug Tiles'),
-          V('ows:Abstract', ''),
-          V('ows:Identifier', 'DebugTiles'),
-          ...tms.map(tmsToBoundingBox),
-          V('Style', [V('ows:Identifier', 'default')]),
-          V('Format', 'image/png'),
-          ...tms.map((c) => V('TileMatrixSetLink', [V('TileMatrixSet', c.def.identifier)])),
-          V('ResourceURL', {
-            format: 'image/png',
-            resourceType: 'tile',
-            template: `${baseUrl}/v1/tiles/{TileMatrixSet}/{TileMatrix}/{TileCol}/{TileRow}.png`,
-          }),
-        ]),
-        ...tms.map(tmsToXml),
+        ...layers,
+        ...tileMatrixSets.map(tmsToXml),
       ]),
     ]).toString()
   );

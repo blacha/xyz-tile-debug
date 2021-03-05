@@ -1,9 +1,9 @@
 import * as NZTM from '@linzjs/tile-matrix-set';
 import { GoogleTms } from '@basemaps/geo/build/tms/google';
-import {TileMatrixSet} from '@basemaps/geo'
+import { TileMatrixSet } from '@basemaps/geo';
 
 const Nztm2000Tms = new TileMatrixSet(NZTM.Nztm2000);
-const Nztm2000QuadTms = new TileMatrixSet(NZTM.Nztm2000Quad)
+const Nztm2000QuadTms = new TileMatrixSet(NZTM.Nztm2000Quad);
 
 export const TileMatrixes = [Nztm2000Tms, Nztm2000QuadTms, GoogleTms];
 
