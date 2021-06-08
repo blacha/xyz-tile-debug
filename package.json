@@ -28,7 +28,7 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
-    "@basemaps/geo": "^4.20.0",
+    "@basemaps/geo": "^5.1.0",
     "@linzjs/tile-matrix-set": "^0.0.1",
     "bblog": "^2.0.0",
     "canvas": "^2.6.1",
