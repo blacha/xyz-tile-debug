@@ -23,10 +23,10 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@basemaps/geo@^4.20.0":
-  version "4.22.0"
-  resolved "https://registry.yarnpkg.com/@basemaps/geo/-/geo-4.22.0.tgz#60cf77a9388a5deb1e6aa37dad65953cba5a3d25"
-  integrity sha512-J0Gf7DDC+JcuemmeRj9S2oylK6wrhTu96BDEzUeRDVfS8DGw6xC4Jm33vp81THFGcnv0ktJKMwUClCtDnLMfew==
+"@basemaps/geo@^6.10.0":
+  version "6.10.0"
+  resolved "https://registry.yarnpkg.com/@basemaps/geo/-/geo-6.10.0.tgz#cd6fa7f0543e7cf2e9cb766d0cc6b813a42e55c6"
+  integrity sha512-oDM4kUzzBCNylzjmeSh0l5L4Ed+q0+V51SElOB9XL/Wr7YfCb7+ZUYXdHFPW72muD/OfKr+0B8JwaemDsyKThQ==
   dependencies:
     "@linzjs/tile-matrix-set" "^0.0.1"
 
