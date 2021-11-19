@@ -1,6 +1,7 @@
 import express from 'express';
 import { performance } from 'perf_hooks';
 import 'source-map-support/register';
+import cors from 'cors';
 import { Png } from './img';
 import { Logger } from './log';
 import { Vector } from './vector';
@@ -80,6 +81,7 @@ async function serveWmts(req: Req, res: express.Response): Promise<void> {
   res.send(buildWmts(TileMatrixes, BASE_URL));
 }
 
+app.use(cors());
 app.get('/v1/tiles/:tms/:z/:x/:y.png', asyncRequest(serveTile));
 app.get('/:z/:x/:y.png', asyncRequest(serveTile));
 
