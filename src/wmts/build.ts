@@ -46,7 +46,7 @@ export function buildWmts(tileMatrixSets: TileMatrixSet[], baseUrl: string): str
   for (const tileMatrix of tileMatrixSets) {
     layers.push(
       V('Layer', [
-        V('ows:Title', 'Debug Tiles'),
+        V('ows:Title', 'Debug Tiles - ' + tileMatrix.identifier),
         V('ows:Abstract', ''),
         V('ows:Identifier', tileMatrix.def.identifier + '-Debug'),
         tmsToBoundingBox(tileMatrix),
