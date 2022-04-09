@@ -1,3 +1,28 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/blacha/xyz-tile-debug/compare/v1.1.1...v2.0.0) (2022-04-09)
+
+
+### Bug Fixes
+
+* correct the starting command for "yarn start" ([9c5d46c](https://github.com/blacha/xyz-tile-debug/commit/9c5d46c))
+* correct wmts debug link ([d00c8b0](https://github.com/blacha/xyz-tile-debug/commit/d00c8b0))
+* support different bounds for the same epsg code ([2db0fa0](https://github.com/blacha/xyz-tile-debug/commit/2db0fa0))
+
+
+### Features
+
+* Allow font family change with env var $XYZ_FONT_FAMILY ([683a0b4](https://github.com/blacha/xyz-tile-debug/commit/683a0b4))
+* enable cors for all requests ([3327cea](https://github.com/blacha/xyz-tile-debug/commit/3327cea))
+* render tiles at higher resolution ([ce68c56](https://github.com/blacha/xyz-tile-debug/commit/ce68c56))
+* scale font based on text length ([3bb2188](https://github.com/blacha/xyz-tile-debug/commit/3bb2188))
+* show tile matrix name ([62d58cf](https://github.com/blacha/xyz-tile-debug/commit/62d58cf))
+* simple html index to show some of the tiles generated ([02cdb61](https://github.com/blacha/xyz-tile-debug/commit/02cdb61))
+* support NZTM2000Quad TileMatrix ([6f22032](https://github.com/blacha/xyz-tile-debug/commit/6f22032))
+* switch to es modules ([63638bc](https://github.com/blacha/xyz-tile-debug/commit/63638bc))
+* use victor mono font for more text ([6b45a1e](https://github.com/blacha/xyz-tile-debug/commit/6b45a1e))
+
+
+
 ## [1.1.1](https://github.com/blacha/xyz-tile-debug/compare/v1.1.0...v1.1.1) (2020-07-11)
 
 
