@@ -1,10 +1,9 @@
-FROM node:15-alpine as builder
+FROM node:16-alpine as builder
 
 RUN apk add  --update --no-cache \
     build-base \
     autoconf \
     bash \
-    python \
     krb5-dev \
     imagemagick \
     libjpeg \
@@ -16,8 +15,6 @@ RUN apk add  --update --no-cache \
     pango-dev \
     giflib-dev \
     gd-dev \
-    ttf-opensans ttf-dejavu ttf-droid \
-    ttf-freefont ttf-liberation ttf-ubuntu-font-family \
     fontconfig
 
 # Create app directory
@@ -25,12 +22,14 @@ WORKDIR /usr/src/app
 
 COPY *.json ./
 COPY yarn.lock ./
-ADD src ./src
 
 RUN yarn
+ADD src ./src
 RUN yarn build
 
 ADD static/mplus-1m-regular.ttf /usr/share/fonts/
+ADD static/VictorMono-Medium.otf /usr/share/fonts/
+
 RUN fc-cache -f
 
-CMD ["yarn", "start"]
+CMD ["node", "build/src/index.js"]
