@@ -48,7 +48,7 @@ yarn run test
 yarn run start
 ```
 
-The server will start on a random port `8855`, this can be configured using the `PORT` environment vairable
+The server will start on a random port `8855`, this can be configured using the `PORT` environment variable
 
 ```shell
 PORT=1234 yarn run start
