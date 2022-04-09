@@ -91,7 +91,7 @@ app.get('/v1/wmts/WMTSCapabilities.xml', asyncRequest(serveWmts));
 async function init(): Promise<void> {
   await app.listen(PORT);
   Logger.info(
-    { wmts: `${BASE_URL}/v1/wmts/WMTSCapabilities.xml'`, xyz: `${BASE_URL}/v1/tiles/:tileMatrixSet/:z/:x/:y.png` },
+    { wmts: `${BASE_URL}/v1/wmts/WMTSCapabilities.xml`, xyz: `${BASE_URL}/v1/tiles/:tileMatrixSet/:z/:x/:y.png` },
     'Started',
   );
 }
