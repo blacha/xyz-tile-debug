@@ -24,5 +24,5 @@ export function buildIndex(): string {
   }
   tiles.push(V('h1', Nztm2000QuadTms.identifier));
 
-  return V('html', [V('body', [V('h1', 'Example Tiles'), tiles.reverse()])]).toString();
+  return V('html', [V('body', [V('h1', 'Example Tiles'), ...tiles.reverse()])]).toString();
 }
