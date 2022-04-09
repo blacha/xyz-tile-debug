@@ -7,7 +7,7 @@ import { BorderColors } from './wmts';
 
 const CanvasSize = 512;
 const FontSize = CanvasSize / 8;
-const FontFamily = 'Victor Mono';
+const FontFamily = process.env.XYZ_FONT_FAMILY ?? 'Victor Mono';
 
 function isQuadKeyCapable(tms: TileMatrixSet): boolean {
   for (const def of tms.def.tileMatrix) {
