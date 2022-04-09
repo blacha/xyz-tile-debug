@@ -7,6 +7,7 @@ import { Logger } from './log';
 import { Vector } from './vector';
 import { TileMatrixes } from './wmts';
 import { buildWmts } from './wmts/build';
+import { buildIndex } from './html';
 
 const PORT = process.env.PORT || 8855;
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
@@ -81,12 +82,18 @@ async function serveWmts(req: Req, res: express.Response): Promise<void> {
   res.send(buildWmts(TileMatrixes, BASE_URL));
 }
 
+async function serveIndex(req: Req, res: express.Response): Promise<void> {
+  res.header('content-type', 'text/html');
+  res.send(buildIndex());
+}
+
 app.use(cors());
 app.get('/v1/tiles/:tms/:z/:x/:y.png', asyncRequest(serveTile));
 app.get('/:z/:x/:y.png', asyncRequest(serveTile));
 
 app.get('/WMTSCapabilities.xml', asyncRequest(serveWmts));
 app.get('/v1/wmts/WMTSCapabilities.xml', asyncRequest(serveWmts));
+app.get('/', asyncRequest(serveIndex));
 
 async function init(): Promise<void> {
   await app.listen(PORT);

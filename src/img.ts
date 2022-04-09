@@ -6,7 +6,7 @@ import { Vector } from './vector';
 import { BorderColors } from './wmts';
 
 const CanvasSize = 512;
-const FontSize = CanvasSize / 8;
+const FontSize = 80;
 const FontFamily = process.env.XYZ_FONT_FAMILY ?? 'Victor Mono';
 
 function isQuadKeyCapable(tms: TileMatrixSet): boolean {
@@ -20,33 +20,37 @@ async function toXyz(v: Vector, tms?: TileMatrixSet): Promise<Buffer> {
   const espgName = tms?.def.identifier ?? GoogleTms.def.identifier;
 
   let qk = isQuadKeyCapable(tms ?? GoogleTms) ? QuadKey.fromTile(v) : '';
+  console.log(qk);
 
   // Quad keys get too long for tiles so shorten them
-  if (qk.length > 15) qk = qk.slice(0, 6) + '..' + qk.slice(qk.length - 9);
+  const halfQk = Math.ceil(qk.length / 2);
+  if (halfQk > 6) qk = qk.slice(0, halfQk) + '\n' + qk.slice(halfQk);
+  // console.log(qk);
 
   const xyzS = `${v.x},${v.y}`;
   const canvas = NodeCanvas.createCanvas(CanvasSize, CanvasSize);
+
   const ctx = canvas.getContext('2d');
 
   const halfCanvas = CanvasSize / 2;
   const quarterCanvas = CanvasSize / 4;
 
-  const tileFontSize = Math.min(Math.floor(CanvasSize / xyzS.length + 10), FontSize);
+  const tileFontSize = Math.min(Math.floor(CanvasSize / v.z + 30), FontSize);
 
   // Fill & Stroke the center text
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.font = `bold ${tileFontSize}px '${FontFamily}'`;
-  ctx.fillStyle = 'rgba(240,240,240,1)';
-  ctx.strokeStyle = 'rgba(0,0,0,1)';
+  ctx.fillStyle = 'rgba(240,240,240,0.87)';
+  ctx.strokeStyle = 'rgba(0,0,0,0.87)';
   // Render the XYZ
   ctx.fillText(xyzS, halfCanvas, halfCanvas - quarterCanvas);
   ctx.strokeText(xyzS, halfCanvas, halfCanvas - quarterCanvas);
 
   // Quadkey
   if (qk !== '') {
-    ctx.fillText(qk, halfCanvas, halfCanvas);
-    ctx.strokeText(qk, halfCanvas, halfCanvas);
+    ctx.fillText(qk, halfCanvas, halfCanvas - quarterCanvas / 3);
+    ctx.strokeText(qk, halfCanvas, halfCanvas - quarterCanvas / 3);
   }
 
   // Zoom level
@@ -65,13 +69,15 @@ async function toXyz(v: Vector, tms?: TileMatrixSet): Promise<Buffer> {
 
   // Stroke around the edges
   ctx.strokeStyle = BorderColors[espgName];
+  ctx.lineWidth = 4;
+  // ctx.stroke
 
   ctx.beginPath();
-  ctx.lineTo(0.5, 0.5);
-  ctx.lineTo(0.5, CanvasSize - 0.5);
-  ctx.lineTo(CanvasSize - 0.5, CanvasSize - 0.5);
-  ctx.lineTo(CanvasSize - 0.5, 0.5);
-  ctx.lineTo(0.5, 0.5);
+  ctx.lineTo(1, 1);
+  ctx.lineTo(1, CanvasSize - 1);
+  ctx.lineTo(CanvasSize - 1, CanvasSize - 1);
+  ctx.lineTo(CanvasSize - 1, 1);
+  ctx.lineTo(1, 1);
   ctx.stroke();
 
   return canvas.toBuffer('image/png');

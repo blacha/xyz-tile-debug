@@ -54,7 +54,7 @@ export function buildWmts(tileMatrixSets: TileMatrixSet[], baseUrl: string): str
         V('Format', 'image/png'),
         V('TileMatrixSetLink', [V('TileMatrixSet', tileMatrix.def.identifier)]),
         V('ResourceURL', {
-          format: 'image/png',
+          format: 'image/webp',
           resourceType: 'tile',
           template: `${baseUrl}/v1/tiles/{TileMatrixSet}/{TileMatrix}/{TileCol}/{TileRow}.png`,
         }),
