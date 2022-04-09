@@ -1,13 +1,13 @@
 import express from 'express';
 import { performance } from 'perf_hooks';
-import 'source-map-support/register';
+import 'source-map-support/register.js';
 import cors from 'cors';
-import { Png } from './img';
-import { Logger } from './log';
-import { Vector } from './vector';
-import { TileMatrixes } from './wmts';
-import { buildWmts } from './wmts/build';
-import { buildIndex } from './html';
+import { Png } from './img.js';
+import { Logger } from './log.js';
+import { Vector } from './vector.js';
+import { TileMatrixes } from './wmts/index.js';
+import { buildWmts } from './wmts/build.js';
+import { buildIndex } from './html.js';
 
 const PORT = process.env.PORT || 8855;
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
@@ -98,7 +98,11 @@ app.get('/', asyncRequest(serveIndex));
 async function init(): Promise<void> {
   await app.listen(PORT);
   Logger.info(
-    { wmts: `${BASE_URL}/v1/wmts/WMTSCapabilities.xml`, xyz: `${BASE_URL}/v1/tiles/:tileMatrixSet/:z/:x/:y.png` },
+    {
+      wmts: `${BASE_URL}/v1/wmts/WMTSCapabilities.xml`,
+      xyz: `${BASE_URL}/v1/tiles/:tileMatrixSet/:z/:x/:y.png`,
+      root: `${BASE_URL}`,
+    },
     'Started',
   );
 }

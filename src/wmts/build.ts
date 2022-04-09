@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { TileMatrixSet } from '@basemaps/geo/build/tile.matrix.set';
-import { V, VNode } from '../vdom';
+import { TileMatrixSet } from '@basemaps/geo';
+import { V, VNode } from '../vdom.js';
 
 const XmlPrefix = `<?xml version="1.0"?>`;
 const CapabilitiesAttrs = {

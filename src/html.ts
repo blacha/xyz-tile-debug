@@ -1,5 +1,5 @@
 import { GoogleTms, Nztm2000QuadTms } from '@basemaps/geo';
-import { V } from './vdom';
+import { V } from './vdom.js';
 
 export function buildIndex(): string {
   let startX = 6624592;

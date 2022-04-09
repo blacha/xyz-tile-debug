@@ -1,9 +1,9 @@
 import { QuadKey } from '@basemaps/geo';
-import { TileMatrixSet } from '@basemaps/geo/build/tile.matrix.set';
-import { GoogleTms } from '@basemaps/geo/build/tms/google';
-import * as NodeCanvas from 'canvas';
-import { Vector } from './vector';
-import { BorderColors } from './wmts';
+import { TileMatrixSet } from '@basemaps/geo/build/tile.matrix.set.js';
+import { GoogleTms } from '@basemaps/geo/build/tms/google.js';
+import NodeCanvas from 'canvas';
+import { Vector } from './vector.js';
+import { BorderColors } from './wmts/index.js';
 
 const CanvasSize = 512;
 const FontSize = 80;
@@ -20,12 +20,10 @@ async function toXyz(v: Vector, tms?: TileMatrixSet): Promise<Buffer> {
   const espgName = tms?.def.identifier ?? GoogleTms.def.identifier;
 
   let qk = isQuadKeyCapable(tms ?? GoogleTms) ? QuadKey.fromTile(v) : '';
-  console.log(qk);
 
   // Quad keys get too long for tiles so shorten them
   const halfQk = Math.ceil(qk.length / 2);
   if (halfQk > 6) qk = qk.slice(0, halfQk) + '\n' + qk.slice(halfQk);
-  // console.log(qk);
 
   const xyzS = `${v.x},${v.y}`;
   const canvas = NodeCanvas.createCanvas(CanvasSize, CanvasSize);
