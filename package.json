@@ -4,7 +4,7 @@
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
   "bin": {
-    "xyz-tile-debug": "./xyz-tile-debug"
+    "xyz-tile-debug": "./xyz-tile-debug.mjs"
   },
   "type": "module",
   "scripts": {
