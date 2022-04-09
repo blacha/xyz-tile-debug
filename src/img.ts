@@ -7,6 +7,7 @@ import { BorderColors } from './wmts';
 
 const CanvasSize = 512;
 const FontSize = CanvasSize / 8;
+const FontFamily = 'Victor Mono';
 
 function isQuadKeyCapable(tms: TileMatrixSet): boolean {
   for (const def of tms.def.tileMatrix) {
@@ -21,7 +22,7 @@ async function toXyz(v: Vector, tms?: TileMatrixSet): Promise<Buffer> {
   let qk = isQuadKeyCapable(tms ?? GoogleTms) ? QuadKey.fromTile(v) : '';
 
   // Quad keys get too long for tiles so shorten them
-  if (qk.length > 10) qk = qk.slice(0, 3) + '.' + qk.slice(qk.length - 6);
+  if (qk.length > 15) qk = qk.slice(0, 6) + '..' + qk.slice(qk.length - 9);
 
   const xyzS = `${v.x},${v.y}`;
   const canvas = NodeCanvas.createCanvas(CanvasSize, CanvasSize);
@@ -30,10 +31,12 @@ async function toXyz(v: Vector, tms?: TileMatrixSet): Promise<Buffer> {
   const halfCanvas = CanvasSize / 2;
   const quarterCanvas = CanvasSize / 4;
 
+  const tileFontSize = Math.min(Math.floor(CanvasSize / xyzS.length + 10), FontSize);
+
   // Fill & Stroke the center text
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.font = `bold ${FontSize}px 'm+ 1m'`;
+  ctx.font = `bold ${tileFontSize}px '${FontFamily}'`;
   ctx.fillStyle = 'rgba(240,240,240,1)';
   ctx.strokeStyle = 'rgba(0,0,0,1)';
   // Render the XYZ
@@ -52,7 +55,7 @@ async function toXyz(v: Vector, tms?: TileMatrixSet): Promise<Buffer> {
 
   // Log the TileMatrixSet used to render this
   if (tms) {
-    ctx.font = `bold ${FontSize - 12}px "m+ 1m"`;
+    ctx.font = `bold ${FontSize - 24}px "${FontFamily}"`;
     ctx.textBaseline = 'bottom';
     ctx.fillStyle = BorderColors[espgName];
 
