@@ -32,4 +32,10 @@ ADD static/VictorMono-Medium.otf /usr/share/fonts/
 
 RUN fc-cache -f
 
+ARG GIT_VERSION
+ENV GIT_VERSION ${GIT_VERSION}
+
+ARG GIT_HASH
+ENV GIT_HASH ${GIT_HASH}
+
 CMD ["node", "build/src/index.js"]

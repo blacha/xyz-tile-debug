@@ -11,6 +11,10 @@ import { buildIndex } from './html.js';
 
 const PORT = process.env.PORT || 8855;
 const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+
+const GIT_HASH = process.env.GIT_HASH;
+const GIT_VERSION = process.env.GIT_VERSION;
+
 const app = express();
 
 function getXyz(req: express.Request): Vector {
@@ -107,4 +111,5 @@ async function init(): Promise<void> {
   );
 }
 
+if (GIT_VERSION) Logger.info({ version: GIT_VERSION, hash: GIT_HASH }, 'Starting');
 init().catch(console.error.bind(console));

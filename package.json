@@ -11,6 +11,7 @@
     "start": "node build/src/index.js",
     "build": "tsc --pretty",
     "build-watch": "tsc --pretty --watch",
+    "build-docker": "./build.docker.sh",
     "lint": "eslint 'src/**/*.ts' --quiet --fix",
     "test": "ospec build/**/*.test.js",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
