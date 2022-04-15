@@ -24,6 +24,14 @@ open http://localhost:8855/v1/tiles/WebMercatorQuad/10/10/10.png
 open http://localhost:8855/v1/wmts/WMTSCapabilities.xml
 ```
 
+or with docker
+
+```
+docker run  -it -p 8855:8855 blacha/xyz-tile-debug
+open http://localhost:8855/v1/tiles/WebMercatorQuad/10/10/10.png
+open http://localhost:8855/v1/wmts/WMTSCapabilities.xml
+```
+
 # Building
 
 This requires [NodeJs](https://nodejs.org/en/) > 12 & [Yarn](https://yarnpkg.com/en/)
