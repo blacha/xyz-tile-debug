@@ -1,3 +1,8 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/blacha/xyz-tile-debug/compare/v2.1.0...v2.1.1) (2022-04-15)
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/blacha/xyz-tile-debug/compare/v2.0.2...v2.1.0) (2022-04-15)
 
