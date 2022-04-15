@@ -20,7 +20,8 @@
     "access": "public"
   },
   "files": [
-    "build/"
+    "build/",
+    "xyz-tile-debug.mjs"
   ],
   "keywords": [],
   "author": "",
