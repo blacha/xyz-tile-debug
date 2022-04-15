@@ -16,6 +16,12 @@
     "test": "ospec build/**/*.test.js",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "build/"
+  ],
   "keywords": [],
   "author": "",
   "license": "MIT",

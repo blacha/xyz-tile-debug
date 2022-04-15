@@ -2,7 +2,7 @@
 
 Generates debug tiles to overlay in systems that consume XYZ tiles
 
-![Example Tile](./static/example.tile.png)
+![Example Tile](static/example.tile.png)
 
 ## Format
 
