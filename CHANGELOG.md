@@ -1,3 +1,13 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/blacha/xyz-tile-debug/compare/v2.0.0...v2.0.1) (2022-04-15)
+
+
+### Bug Fixes
+
+* tiles are png not webp ([e736e50](https://github.com/blacha/xyz-tile-debug/commit/e736e50))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/blacha/xyz-tile-debug/compare/v1.1.1...v2.0.0) (2022-04-09)
 
