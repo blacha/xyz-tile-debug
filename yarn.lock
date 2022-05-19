@@ -2366,9 +2366,9 @@ optionator@^0.9.1:
     word-wrap "^1.2.3"
 
 ospec@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/ospec/-/ospec-4.1.1.tgz#52faa97b2de3bec5b447795b0b460da5c0ebb4a9"
-  integrity sha512-fgWIk1eLDidfB+ixTo3PL3HuuO6iX2LhgWxdnWwqRu2rJdpTowgeAP0RHgt3DSUVyszs964fMuq1tB7Ov2C38A==
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/ospec/-/ospec-4.1.5.tgz#ece3c78259fe0b2307bf26b0d0651f76051269f4"
+  integrity sha512-jvM+JqNPLlO1juuYu3V3a3e0nH6fwCRN9LOAK9NbZbXkw+8VfUjysrE6zehXy5Jv7N/u2jxW5BJjXlemNNKHzw==
   dependencies:
     glob "^7.1.3"
 
