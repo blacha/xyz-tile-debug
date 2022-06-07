@@ -24,9 +24,9 @@
     js-tokens "^4.0.0"
 
 "@basemaps/geo@^6.21.1":
-  version "6.21.1"
-  resolved "https://registry.yarnpkg.com/@basemaps/geo/-/geo-6.21.1.tgz#30897d16bfb087c79b1ff503bc46e9d6aaab56ee"
-  integrity sha512-O4G15dz4oJsYe2xReRpxhkj+w50YZqRJ0m55iY/AWET5L0ZKDFztRT0U4jywsoyZfdX4kDRgyxsTRYyT2gy6Zg==
+  version "6.28.1"
+  resolved "https://registry.yarnpkg.com/@basemaps/geo/-/geo-6.28.1.tgz#602251ab479e100a162d3008f9e5ed840894e54a"
+  integrity sha512-WswBP8SaSIHDCKHjF+ayiFgZvsdsOdjYlyE3X3pMrGzehlqz0gEwamJfJoby4MVBpTagV1K9Or7xyCzgTQhlHA==
   dependencies:
     "@linzjs/tile-matrix-set" "^0.0.1"
 
